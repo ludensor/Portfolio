@@ -16,5 +16,6 @@ UE5로 제작된 EQS(환경 쿼리)기반 내비게이션 시스템입니다.
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/debd033b-ed23-4c94-a578-a4046a69e76a.png" width="400" height="400"/>
 
 #### Demo
-<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/d2e28186-82e7-4a60-98bc-7fb9627c4387.gif" width="500" height="400"/>
+특정 위치로 길 찾는 영상과, 특정 액터를 지속적으로 길 찾기를 하면서 따라가는 영상입니다.
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/a85b853a-4393-4042-b6dd-4da178681d79.gif" width="500" height="400"/>
+<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/d2e28186-82e7-4a60-98bc-7fb9627c4387.gif" width="500" height="400"/>
