@@ -24,6 +24,65 @@
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/5a9b730d-d78a-430a-a1bc-d79bdf9f4b89.png" width="400" height="400"/>
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/debd033b-ed23-4c94-a578-a4046a69e76a.png" width="400" height="400"/>
 
+```cpp
+void UEQSNavBTTask_MoveTo::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
+{
+	FEQSNavBTMoveToTaskMemory* MyMemory = CastInstanceNodeMemory<FEQSNavBTMoveToTaskMemory>(NodeMemory);
+	if (MyMemory->PathFollowingStatus == EEQSNavPathFollowingStatus::Moving)
+	{
+		const bool bHasNewSample = UpdateBlockDetection(*MyMemory);
+		if (bHasNewSample && IsBlocked(*MyMemory))
+		{
+			UE_LOG(LogBehaviorTree, Log, TEXT("%s: is blocked!"), *GetNameSafe(this));
+			FinishLatentTask(OwnerComp, EBTNodeResult::Failed);
+			return;
+		}
+
+		const float GameTime = GetWorld()->GetTimeSeconds();
+		if (GameTime > MyMemory->LastDestinationUpdatedTime + DestinationUpdatedInterval)
+		{
+			MyMemory->LastDestinationUpdatedTime = GameTime;
+			UpdateDestination(OwnerComp, *MyMemory);
+		}
+
+		if (MyMemory->bVisibleDestination)
+		{
+			MyMemory->EnvQueryStatus = EEQSNavEnvQueryStatus::Wait;
+
+			if (HasReachedDestination(*MyMemory))
+			{
+				FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
+			}
+			else
+			{
+				MyMemory->CurrentDestination = MyMemory->GoalActor.IsValid() ? MyMemory->GoalActor->GetActorLocation() : MyMemory->GoalLocation;
+				UpdateMoveFocus(OwnerComp, *MyMemory);
+				FollowPath(OwnerComp, *MyMemory);
+			}
+		}
+		else
+		{
+			if (MyMemory->EnvQueryStatus == EEQSNavEnvQueryStatus::Wait)
+			{
+				RequestQuery(OwnerComp, *MyMemory);
+			}
+			else if (MyMemory->EnvQueryStatus == EEQSNavEnvQueryStatus::QueryFinished)
+			{
+				if (HasReachedEQSItemLocation(*MyMemory))
+				{
+					MyMemory->EnvQueryStatus = EEQSNavEnvQueryStatus::Wait;
+				}
+				else
+				{
+					UpdateMoveFocus(OwnerComp, *MyMemory);
+					FollowPath(OwnerComp, *MyMemory);
+				}
+			}
+		}
+	}
+}
+```
+
 ## 데모
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/a85b853a-4393-4042-b6dd-4da178681d79.gif" width="400" height="400"/>
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/d2e28186-82e7-4a60-98bc-7fb9627c4387.gif" width="400" height="400"/>
