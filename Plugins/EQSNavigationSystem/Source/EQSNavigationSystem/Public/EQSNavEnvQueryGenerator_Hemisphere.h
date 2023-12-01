@@ -11,7 +11,7 @@
  * 반구 생성기
  */
 UCLASS(meta = (DisplayName = "Points: Hemisphere"))
-class EQSNAVIGATIONSYSTEM_API UEQSNavEnvQueryGenerator_Hemisphere : public UEnvQueryGenerator
+class EQSNAVIGATIONSYSTEM_API UEQSNavEnvQueryGenerator_Hemisphere final : public UEnvQueryGenerator
 {
 	GENERATED_BODY()
 

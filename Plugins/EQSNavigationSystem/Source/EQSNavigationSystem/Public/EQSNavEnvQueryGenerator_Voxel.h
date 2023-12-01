@@ -11,7 +11,7 @@
  * º¹¼¿ »ý¼º±â
  */
 UCLASS(meta = (DisplayName = "Points: Voxel"))
-class EQSNAVIGATIONSYSTEM_API UEQSNavEnvQueryGenerator_Voxel : public UEnvQueryGenerator
+class EQSNAVIGATIONSYSTEM_API UEQSNavEnvQueryGenerator_Voxel final : public UEnvQueryGenerator
 {
 	GENERATED_BODY()
 
@@ -19,13 +19,13 @@ public:
 	UEQSNavEnvQueryGenerator_Voxel(const FObjectInitializer& ObjectInitializer);
 
 private:
-	virtual void GenerateItems(FEnvQueryInstance& QueryInstance) const override;
+	virtual void GenerateItems(FEnvQueryInstance& QueryInstance) const final;
 
-	virtual FText GetDescriptionTitle() const override;
-	virtual FText GetDescriptionDetails() const override;
+	virtual FText GetDescriptionTitle() const final;
+	virtual FText GetDescriptionDetails() const final;
 
 #if WITH_EDITOR
-	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) final;
 #endif // WITH_EDITOR
 
 	void StoreNavPoints(const TArray<FNavLocation>& Points, FEnvQueryInstance& QueryInstance) const;

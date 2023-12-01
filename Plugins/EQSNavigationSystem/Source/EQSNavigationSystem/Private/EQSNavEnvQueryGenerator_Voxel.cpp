@@ -15,6 +15,8 @@ UEQSNavEnvQueryGenerator_Voxel::UEQSNavEnvQueryGenerator_Voxel(const FObjectInit
 {
 	GenerateAround = UEnvQueryContext_Querier::StaticClass();
 	GridSize.DefaultValue = 500.0f;
+	HorizontalSpaceBetween.DefaultValue = 200.0f;
+	VerticalSpaceBetween.DefaultValue = 200.0f;
 
 	ItemType = UEnvQueryItemType_Point::StaticClass();
 }
@@ -83,13 +85,13 @@ void UEQSNavEnvQueryGenerator_Voxel::StoreNavPoints(const TArray<FNavLocation>& 
 
 FText UEQSNavEnvQueryGenerator_Voxel::GetDescriptionTitle() const
 {
-	return FText::Format(LOCTEXT("DescriptionGenerateVoxelGridAroundContext", "{0}: generate items around {1}"),
+	return FText::Format(LOCTEXT("DescriptionGenerateVoxelAroundContext", "{0}: generate items around {1}"),
 		Super::GetDescriptionTitle(), UEnvQueryTypes::DescribeContext(GenerateAround));
 }
 
 FText UEQSNavEnvQueryGenerator_Voxel::GetDescriptionDetails() const
 {
-	FText Desc = FText::Format(LOCTEXT("VoxelGridDescription", "radius: {0} horizontal item span: {1} vertical item span: {2}"),
+	FText Desc = FText::Format(LOCTEXT("VoxelDescription", "radius: {0} horizontal item span: {1} vertical item span: {2}"),
 		FText::FromString(GridSize.ToString()),
 		FText::FromString(HorizontalSpaceBetween.ToString()),
 		FText::FromString(VerticalSpaceBetween.ToString()));

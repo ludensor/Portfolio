@@ -4,37 +4,34 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "EQSNavAgentInterface.h"
 #include "EQSNavSampleCharacter.generated.h"
 
-UCLASS(config = Game)
-class AEQSNavSampleCharacter : public ACharacter
+class UCameraComponent;
+class USpringArmComponent;
+
+UCLASS()
+class AEQSNavSampleCharacter : public ACharacter, public IEQSNavAgentInterface
 {
 	GENERATED_BODY()
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* CameraBoom;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* FollowCamera;
 public:
 	AEQSNavSampleCharacter();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Input)
-	float TurnRateGamepad;
+	virtual void GetNavAgentProperties(float& OutAgentRadius, float& OutAgentHalfHeight) const final;
 
-protected:
+private:
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) final;
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
+	void MoveUp(float Value);
 
-	void TurnAtRate(float Rate);
-	void LookUpAtRate(float Rate);
+private:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	USpringArmComponent* CameraBoom;
 
-protected:
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-public:
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UCameraComponent* FollowCamera;
 };
 

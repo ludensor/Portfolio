@@ -13,14 +13,17 @@ AEQSNavSampleCharacter::AEQSNavSampleCharacter()
 {
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
-	TurnRateGamepad = 50.f;
-
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
 
+	GetCharacterMovement()->DefaultLandMovementMode = EMovementMode::MOVE_Flying;
+
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
+
+	GetCharacterMovement()->bUseSeparateBrakingFriction = true;
+	GetCharacterMovement()->BrakingFriction = 8.0f;
 
 	GetCharacterMovement()->JumpZVelocity = 700.f;
 	GetCharacterMovement()->AirControl = 0.35f;
@@ -46,26 +49,14 @@ void AEQSNavSampleCharacter::SetupPlayerInputComponent(class UInputComponent* Pl
 
 	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AEQSNavSampleCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Move Right / Left", this, &AEQSNavSampleCharacter::MoveRight);
-
+	PlayerInputComponent->BindAxis("Move Up / Down", this, &AEQSNavSampleCharacter::MoveUp);
 	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("Turn Right / Left Gamepad", this, &AEQSNavSampleCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("Look Up / Down Gamepad", this, &AEQSNavSampleCharacter::LookUpAtRate);
-}
-
-void AEQSNavSampleCharacter::TurnAtRate(float Rate)
-{
-	AddControllerYawInput(Rate * TurnRateGamepad * GetWorld()->GetDeltaSeconds());
-}
-
-void AEQSNavSampleCharacter::LookUpAtRate(float Rate)
-{
-	AddControllerPitchInput(Rate * TurnRateGamepad * GetWorld()->GetDeltaSeconds());
 }
 
 void AEQSNavSampleCharacter::MoveForward(float Value)
 {
-	if ((Controller != nullptr) && (Value != 0.0f))
+	if (Controller && Value != 0.0f)
 	{
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
@@ -77,7 +68,7 @@ void AEQSNavSampleCharacter::MoveForward(float Value)
 
 void AEQSNavSampleCharacter::MoveRight(float Value)
 {
-	if ((Controller != nullptr) && (Value != 0.0f))
+	if (Controller && Value != 0.0f)
 	{
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
@@ -85,5 +76,18 @@ void AEQSNavSampleCharacter::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void AEQSNavSampleCharacter::MoveUp(float Value)
+{
+	if (Value != 0.0f)
+	{
+		AddMovementInput(FVector::UpVector, Value);
+	}
+}
+
+void AEQSNavSampleCharacter::GetNavAgentProperties(float& OutAgentRadius, float& OutAgentHalfHeight) const
+{
+	GetSimpleCollisionCylinder(OutAgentRadius, OutAgentHalfHeight);
 }
 
