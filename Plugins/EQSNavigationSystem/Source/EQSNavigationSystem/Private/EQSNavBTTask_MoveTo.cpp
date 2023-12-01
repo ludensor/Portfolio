@@ -32,7 +32,7 @@ UEQSNavBTTask_MoveTo::UEQSNavBTTask_MoveTo(const FObjectInitializer& ObjectIniti
 
 	QueryFinishedDelegate = FQueryFinishedSignature::CreateUObject(this, &UEQSNavBTTask_MoveTo::OnQueryFinished);
 
-	static ConstructorHelpers::FObjectFinder<UEnvQuery> EnvQueryObject(TEXT("EnvQuery'/EQSNavigationSystem/EQ_FindPathLocation.EQ_FindPathLocation'"));
+	static ConstructorHelpers::FObjectFinder<UEnvQuery> EnvQueryObject(TEXT("EnvQuery'/EQSNavigationSystem/EQ_EQSNav_FindPathLocation.EQ_EQSNav_FindPathLocation'"));
 	if (EnvQueryObject.Object)
 	{
 		QueryTemplate = EnvQueryObject.Object;
