@@ -1,4 +1,4 @@
-# EQS Navigation System
+# EQS Navigation System [![License](https://img.shields.io/github/license/TheCherno/Hazel.svg)](https://github.com/ludensor/EQSNavigationSystem/blob/master/LICENSE)
 ## 목차
 
 <b>
