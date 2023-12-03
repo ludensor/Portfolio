@@ -54,7 +54,7 @@
 
 ### 콘텐츠
 #### 락온을 이용한 대상 추적
-<img src="https://github.com/ludensor/Portfolio/assets/76856672/33ed3dbd-ae38-44f2-91f9-c8b1032b5d11.gif">
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/7e0356d5-429b-4822-8f88-05a0553cff68.gif">
 
 ```cpp
 void ASLPlayerController::Tick(float DeltaSeconds)
@@ -90,7 +90,7 @@ void ASLPlayerController::Tick(float DeltaSeconds)
 - 카메라가 적 위치를 자동으로 포착하도록 기능을 구현하여 전투의 몰입도를 높였습니다.
 
 #### Timeline을 이용한 박스 트리깅
-<img src="https://github.com/ludensor/Portfolio/assets/76856672/7e033904-df2a-4c64-a967-822e39dac7ac.gif">
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/6f2af63d-7438-49cc-891f-d6cf923f05fd.gif">
 <img src="https://github.com/ludensor/Portfolio/assets/76856672/6d5f3c2a-eaaa-43b2-8515-14393be075e9.png" height = "300"/>
 
 - 플레이어와 트리거 박스를 상호작용하여 문의 움직임을 Timeline 기능을 이용하여 제어하였습니다.
