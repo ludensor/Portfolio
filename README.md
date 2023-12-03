@@ -96,7 +96,7 @@ void ASLPlayerController::Tick(float DeltaSeconds)
 - 플레이어와 트리거 박스를 상호작용하여 문의 움직임을 Timeline 기능을 이용하여 제어하였습니다.
 
 #### 피격 방향에 따른 히트 모션 다양화
-<img src="https://github.com/ludensor/Portfolio/assets/76856672/ece1c384-e7bf-4cd0-bec7-f2e06d157cf5.gif">
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/e98386ad-1c5c-46f3-be22-63bfa7f0a1e1.gif">
 
 ```cpp
 int32 USLGameStatics::ConvertYawRotationToIndex(FRotator Rotation, FRotator BaseRotation /*= FRotator::ZeroRotator*/, int32 Slice /*= 4*/)
