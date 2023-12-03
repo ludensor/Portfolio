@@ -44,7 +44,6 @@
 
 ## Souls Like
 ### 프로젝트 개요
-<img src="https://github.com/ludensor/Portfolio/assets/76856672/5cd4a461-203d-4a71-afa9-cf2bfae5be03.png">
 > **설명:** 소울류 장르의 포트폴리오입니다.
 >
 > **개발 환경:** UnrealEngine 4.26
@@ -92,7 +91,7 @@ void ASLPlayerController::Tick(float DeltaSeconds)
 
 #### Timeline을 이용한 박스 트리깅
 <img src="https://github.com/ludensor/Portfolio/assets/76856672/7e033904-df2a-4c64-a967-822e39dac7ac.gif">
-<img src="https://github.com/ludensor/Portfolio/assets/76856672/668c3ad6-238b-46bd-b00c-157a511f3134.png" height = "300"/>
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/6d5f3c2a-eaaa-43b2-8515-14393be075e9.png" height = "300"/>
 
 - 플레이어와 트리거 박스를 상호작용하여 문의 움직임을 Timeline 기능을 이용하여 제어하였습니다.
 
