@@ -20,6 +20,8 @@
 > **개발 환경:** UnrealEngine 5.0
 > 
 > **제작 기간:** 2023.11.19 ~ 2023.11.30
+>
+> **소스 코드:** [플러그인](EQSNavigationSystem/Plugins/EQSNavigationSystem/Source/EQSNavigationSystem)
 
 ### 사용 방법
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/32c08b74-0e9f-406c-b7cf-08f6bcaa4816.png" width="400" height="400"/>
