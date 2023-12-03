@@ -33,5 +33,6 @@
 
 
 ## 데모
-<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/a85b853a-4393-4042-b6dd-4da178681d79.gif" width="400" height="400"/>
-<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/d2e28186-82e7-4a60-98bc-7fb9627c4387.gif" width="400" height="400"/>
+
+<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/d7b9dfd9-5e0b-42cb-a049-1a6e524899a9.gif" width="400" height="400"/>
+<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/7551d46d-4174-430a-b4f9-724ed1aaffa4.gif" width="400" height="400"/>
