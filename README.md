@@ -17,8 +17,8 @@
 > **제작 기간:** 2023.11.19 ~ 2023.11.30
 
 ## 사용 방법
-<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/5a9b730d-d78a-430a-a1bc-d79bdf9f4b89.png" width="400" height="400"/>
-<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/debd033b-ed23-4c94-a578-a4046a69e76a.png" width="400" height="400"/>
+<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/32c08b74-0e9f-406c-b7cf-08f6bcaa4816.png" width="400" height="400"/>
+<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/63825963-9566-4ab3-9eda-195419dc4b7b.png" width="400" height="400"/>
 
 1. AI의 위치에서 목적지가 보이는지 검사합니다.
 2. 목적지가 보이면 그대로 이동하고 보이지 않으면, EQS를 실행합니다.
