@@ -10,6 +10,7 @@
 - [Souls Like(개인 프로젝트)](#Souls-Like)
   - [개요](#프로젝트-개요)
   - [콘텐츠](#콘텐츠)
+  - [영상](https://www.youtube.com/watch?v=An0XZp3zEA8)
 
 </b>
 
