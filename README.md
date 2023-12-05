@@ -20,7 +20,7 @@
 >
 > **개발 환경:** UnrealEngine 5.0
 > 
-> **제작 기간:** 2023.11.19 ~ 2023.11.30(12일)
+> **제작 기간:** 2023.11.19 ~ 2023.11.30 (12일)
 >
 > **[소스 코드](https://github.com/ludensor/Portfolio/tree/master/EQSNavigationSystem/Plugins/EQSNavigationSystem/Source/EQSNavigationSystem)**
 
@@ -51,7 +51,7 @@
 >
 > **개발 환경:** UnrealEngine 4.26
 >
-> **제작 기간:** 2021.03.29 ~ 2021.06.30(94일)
+> **제작 기간:** 2021.03.29 ~ 2021.06.30 (94일)
 >
 > **[시연 영상](https://www.youtube.com/watch?v=An0XZp3zEA8)**
 
