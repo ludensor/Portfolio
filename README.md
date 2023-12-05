@@ -17,11 +17,11 @@
 ## EQS Navigation System
 ### 프로젝트 개요
 > **제작 기간:** 2023.11.19 ~ 2023.11.30 (12일)
->
-> **설명:** 언리얼엔진의 EQS(환경 쿼리)를 이용한 3차원 내비게이션 시스템 모듈입니다.
->
+> 
 > **개발 환경:** UnrealEngine 5.0
->
+> 
+> **설명:** 언리얼엔진의 EQS(환경 쿼리)를 이용한 3차원 내비게이션 시스템 모듈입니다.
+> 
 > **[소스 코드](https://github.com/ludensor/Portfolio/tree/master/EQSNavigationSystem/Plugins/EQSNavigationSystem/Source/EQSNavigationSystem)**
 
 ### 사용 방법
@@ -49,11 +49,10 @@
 ### 프로젝트 개요
 > **제작 기간:** 2021.03.29 ~ 2021.06.30 (94일)
 > 
->  **설명:** 소울류 장르의 포트폴리오입니다.
->
 > **개발 환경:** UnrealEngine 4.26
->
->
+>  
+> **설명:** 소울류 장르의 포트폴리오입니다.
+> 
 > **[시연 영상](https://www.youtube.com/watch?v=An0XZp3zEA8)**
 
 ### 콘텐츠
