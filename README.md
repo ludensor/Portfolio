@@ -6,6 +6,7 @@
 - [EQS Navigation System(플러그인)](#EQS-Navigation-System)
   - [개요](#프로젝트-개요)
   - [사용 방법](#사용-방법)
+  - [성능 테스트](#성능-테스트)
   - [데모](#데모)
 - [Souls Like(개인 프로젝트)](#Souls-Like)
   - [개요](#프로젝트-개요)
@@ -39,6 +40,14 @@
 
 - 길 찾기에 사용되는 EnvQuery 에셋
 
+### 성능 테스트
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/a9e6b97f-24e4-46a9-bef1-538dbcaa0434.gif">
+
+- 50개 AI 캐릭터 성능 테스트
+
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/73e7c738-0b44-4203-a23c-17cc8e11784b.png" width = "800">
+
+- Unreal Insight 툴을 사용한 프로파일링 결과입니다.
 
 ### 데모
 
