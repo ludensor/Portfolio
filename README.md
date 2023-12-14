@@ -45,7 +45,7 @@
 
 - 50개 AI 캐릭터 성능 테스트
 
-<img src="https://github.com/ludensor/Portfolio/assets/76856672/73e7c738-0b44-4203-a23c-17cc8e11784b.png" width = "800">
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/73e7c738-0b44-4203-a23c-17cc8e11784b.png" width = "600">
 
 - Unreal Insight 툴을 사용한 프로파일링 결과입니다.
 
