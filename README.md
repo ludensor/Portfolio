@@ -23,7 +23,7 @@
 > 
 > **설명:** 언리얼엔진의 EQS(환경 쿼리)를 이용한 3차원 내비게이션 시스템 모듈입니다.
 > 
-> **[소스 코드](https://github.com/ludensor/Portfolio/tree/master/EQSNavigationSystem/Plugins/EQSNavigationSystem/Source/EQSNavigationSystem)**
+> **[소스 코드](https://github.com/ludensor/Portfolio/tree/master/Plugins/EQSNavigationSystem/Source/EQSNavigationSystem)**
 
 ### 사용 방법
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/32c08b74-0e9f-406c-b7cf-08f6bcaa4816.png" width="400" height="400"/>
