@@ -153,4 +153,4 @@ int32 USLGameStatics::ConvertYawRotationToIndex(FRotator Rotation, FRotator Base
 - 거리가 균일한 Vector List를 얻은 뒤 각 원소를 무작위로 섞어 정해진 개수만큼 Clamp 하여 사용합니다.
 - 광역 스킬 기능 개발에 사용될 수 있습니다.
 
-### 바이오하자드4-인벤토리(RE4)
+### 바이오하자드4 인벤토리(RE4)
