@@ -141,3 +141,10 @@ int32 USLGameStatics::ConvertYawRotationToIndex(FRotator Rotation, FRotator Base
 - 몬스터와 플레이어의 위치에 대한 방향벡터와 플레이어의 전방 벡터의 사이 각도를 인덱스화하여 피격 애니메이션을 재생하도록 구현하였습니다.
 
 ## 그 외
+
+### 고급 환경 쿼리
+#### Triangle Tessellation
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/350eee14-6b90-4fa9-b3ac-d5d15f44ac6b.gif" width = 400>
+<img src="https://github.com/ludensor/Portfolio/assets/76856672/86166e0a-9135-4e69-a15b-18316ab00443.gif" width = 400>
+
+- 광역 스킬 기능 개발에 사용될 수 있습니다.
