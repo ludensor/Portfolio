@@ -1,6 +1,6 @@
 // Copyright Nori. All Rights Reserved.
 
-#include "EQSNavSampleCharacter.h"
+#include "NoriProjectCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -9,7 +9,7 @@
 #include "GameFramework/SpringArmComponent.h"
 
 
-AEQSNavSampleCharacter::AEQSNavSampleCharacter()
+ANoriProjectCharacter::ANoriProjectCharacter()
 {
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
@@ -41,20 +41,20 @@ AEQSNavSampleCharacter::AEQSNavSampleCharacter()
 	FollowCamera->bUsePawnControlRotation = false;
 }
 
-void AEQSNavSampleCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void ANoriProjectCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AEQSNavSampleCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("Move Right / Left", this, &AEQSNavSampleCharacter::MoveRight);
-	PlayerInputComponent->BindAxis("Move Up / Down", this, &AEQSNavSampleCharacter::MoveUp);
+	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &ANoriProjectCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("Move Right / Left", this, &ANoriProjectCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("Move Up / Down", this, &ANoriProjectCharacter::MoveUp);
 	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
 }
 
-void AEQSNavSampleCharacter::MoveForward(float Value)
+void ANoriProjectCharacter::MoveForward(float Value)
 {
 	if (Controller && Value != 0.0f)
 	{
@@ -66,7 +66,7 @@ void AEQSNavSampleCharacter::MoveForward(float Value)
 	}
 }
 
-void AEQSNavSampleCharacter::MoveRight(float Value)
+void ANoriProjectCharacter::MoveRight(float Value)
 {
 	if (Controller && Value != 0.0f)
 	{
@@ -78,7 +78,7 @@ void AEQSNavSampleCharacter::MoveRight(float Value)
 	}
 }
 
-void AEQSNavSampleCharacter::MoveUp(float Value)
+void ANoriProjectCharacter::MoveUp(float Value)
 {
 	if (Value != 0.0f)
 	{
@@ -86,7 +86,7 @@ void AEQSNavSampleCharacter::MoveUp(float Value)
 	}
 }
 
-void AEQSNavSampleCharacter::GetNavAgentProperties(float& OutAgentRadius, float& OutAgentHalfHeight) const
+void ANoriProjectCharacter::GetNavAgentProperties(float& OutAgentRadius, float& OutAgentHalfHeight) const
 {
 	GetSimpleCollisionCylinder(OutAgentRadius, OutAgentHalfHeight);
 }

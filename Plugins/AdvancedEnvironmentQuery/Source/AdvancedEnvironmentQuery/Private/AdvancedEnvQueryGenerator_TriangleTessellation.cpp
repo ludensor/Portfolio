@@ -1,7 +1,7 @@
 // Copyright Nori. All Rights Reserved.
 
 
-#include "EnvQueryGenerator_TriangleTessellation.h"
+#include "AdvancedEnvQueryGenerator_TriangleTessellation.h"
 
 #include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 
@@ -10,7 +10,7 @@ constexpr float MIN_TRIANGLE_EDGE = 10.0f;
 
 #define LOCTEXT_NAMESPACE "EnvQueryGenerator"
 
-UEnvQueryGenerator_TriangleTessellation::UEnvQueryGenerator_TriangleTessellation(const FObjectInitializer& ObjectInitializer)
+UAdvancedEnvQueryGenerator_TriangleTessellation::UAdvancedEnvQueryGenerator_TriangleTessellation(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 	CircleCenter = UEnvQueryContext_Querier::StaticClass();
@@ -24,7 +24,7 @@ UEnvQueryGenerator_TriangleTessellation::UEnvQueryGenerator_TriangleTessellation
 	ProjectionData.TraceMode = EEnvQueryTrace::None;
 }
 
-float UEnvQueryGenerator_TriangleTessellation::GetArcBisectorAngle(FEnvQueryInstance& QueryInstance) const
+float UAdvancedEnvQueryGenerator_TriangleTessellation::GetArcBisectorAngle(FEnvQueryInstance& QueryInstance) const
 {
 	float BisectAngle = 0.0f;
 
@@ -59,7 +59,7 @@ float UEnvQueryGenerator_TriangleTessellation::GetArcBisectorAngle(FEnvQueryInst
 	return BisectAngle;
 }
 
-void UEnvQueryGenerator_TriangleTessellation::GetEdgeVectors(float BisectAngleDegrees, float Edge, TArray<FVector>& OutVectors) const
+void UAdvancedEnvQueryGenerator_TriangleTessellation::GetEdgeVectors(float BisectAngleDegrees, float Edge, TArray<FVector>& OutVectors) const
 {
 	constexpr float AngleDelta = PI / 3.0f;
 
@@ -78,7 +78,7 @@ void UEnvQueryGenerator_TriangleTessellation::GetEdgeVectors(float BisectAngleDe
 	}
 }
 
-int32 UEnvQueryGenerator_TriangleTessellation::GetItemCount(float Radius, const FVector& FirstEdge, const FVector& SecondEdge, int32 StepsCount) const
+int32 UAdvancedEnvQueryGenerator_TriangleTessellation::GetItemCount(float Radius, const FVector& FirstEdge, const FVector& SecondEdge, int32 StepsCount) const
 {
 	int32 ItemCount = StepsCount;
 	FVector Pivot = FirstEdge + SecondEdge;
@@ -107,7 +107,7 @@ int32 UEnvQueryGenerator_TriangleTessellation::GetItemCount(float Radius, const 
 	return ItemCount;
 }
 
-bool UEnvQueryGenerator_TriangleTessellation::IsAngleAllowed(const FVector& Point, float BisectAngleDegrees, float AngleRangeDegrees, bool bConstrainAngle) const
+bool UAdvancedEnvQueryGenerator_TriangleTessellation::IsAngleAllowed(const FVector& Point, float BisectAngleDegrees, float AngleRangeDegrees, bool bConstrainAngle) const
 {
 	if (bConstrainAngle)
 	{
@@ -119,7 +119,7 @@ bool UEnvQueryGenerator_TriangleTessellation::IsAngleAllowed(const FVector& Poin
 	return true;
 }
 
-void UEnvQueryGenerator_TriangleTessellation::GenerateItems(FEnvQueryInstance& QueryInstance) const
+void UAdvancedEnvQueryGenerator_TriangleTessellation::GenerateItems(FEnvQueryInstance& QueryInstance) const
 {
 	TArray<FVector> CenterPoints;
 	if (!QueryInstance.PrepareContext(CircleCenter, CenterPoints))
@@ -191,13 +191,13 @@ void UEnvQueryGenerator_TriangleTessellation::GenerateItems(FEnvQueryInstance& Q
 	StoreNavPoints(Points, QueryInstance);
 }
 
-FText UEnvQueryGenerator_TriangleTessellation::GetDescriptionTitle() const
+FText UAdvancedEnvQueryGenerator_TriangleTessellation::GetDescriptionTitle() const
 {
 	return FText::Format(LOCTEXT("DescriptionGenerateTriangleTessellationContext", "{0}: generate items around {1}"),
 		Super::GetDescriptionTitle(), UEnvQueryTypes::DescribeContext(CircleCenter));
 }
 
-FText UEnvQueryGenerator_TriangleTessellation::GetDescriptionDetails() const
+FText UAdvancedEnvQueryGenerator_TriangleTessellation::GetDescriptionDetails() const
 {
 	FText Desc = FText::Format(LOCTEXT("TriangleTessellationDescription", "radius: {0}\ntriangle edge: {1}"),
 		FText::FromString(CircleRadius.ToString()),
@@ -220,21 +220,21 @@ FText UEnvQueryGenerator_TriangleTessellation::GetDescriptionDetails() const
 }
 
 #if WITH_EDITOR
-void UEnvQueryGenerator_TriangleTessellation::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+void UAdvancedEnvQueryGenerator_TriangleTessellation::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
 {
 	if (PropertyChangedEvent.Property)
 	{
 		const FName PropName = PropertyChangedEvent.MemberProperty->GetFName();
-		if (PropName == GET_MEMBER_NAME_CHECKED(UEnvQueryGenerator_TriangleTessellation, ArcAngle))
+		if (PropName == GET_MEMBER_NAME_CHECKED(UAdvancedEnvQueryGenerator_TriangleTessellation, ArcAngle))
 		{
 			ArcAngle.DefaultValue = FMath::Clamp(ArcAngle.DefaultValue, 0.0f, 180.0f);
 			bDefineArc = ArcAngle.DefaultValue > 0.0f && ArcAngle.DefaultValue < 180.0f;
 		}
-		else if (PropName == GET_MEMBER_NAME_CHECKED(UEnvQueryGenerator_TriangleTessellation, CircleRadius))
+		else if (PropName == GET_MEMBER_NAME_CHECKED(UAdvancedEnvQueryGenerator_TriangleTessellation, CircleRadius))
 		{
 			CircleRadius.DefaultValue = FMath::Max(CircleRadius.DefaultValue, FMath::Max(MIN_CIRCLE_RADIUS, TriangleEdge.DefaultValue));
 		}
-		else if (PropName == GET_MEMBER_NAME_CHECKED(UEnvQueryGenerator_TriangleTessellation, TriangleEdge))
+		else if (PropName == GET_MEMBER_NAME_CHECKED(UAdvancedEnvQueryGenerator_TriangleTessellation, TriangleEdge))
 		{
 			TriangleEdge.DefaultValue = FMath::Clamp(TriangleEdge.DefaultValue, MIN_TRIANGLE_EDGE, CircleRadius.DefaultValue);
 		}

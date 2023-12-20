@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class EQSNavSample : ModuleRules
+public class NoriProject : ModuleRules
 {
-    public EQSNavSample(ReadOnlyTargetRules Target) : base(Target)
+    public NoriProject(ReadOnlyTargetRules Target) : base(Target)
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 

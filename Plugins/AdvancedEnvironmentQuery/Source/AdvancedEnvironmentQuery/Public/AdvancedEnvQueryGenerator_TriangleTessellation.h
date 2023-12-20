@@ -5,19 +5,19 @@
 #include "CoreMinimal.h"
 #include "EnvironmentQuery/Generators/EnvQueryGenerator_ProjectedPoints.h"
 #include "DataProviders/AIDataProvider.h"
-#include "EnvQueryGenerator_TriangleTessellation.generated.h"
+#include "AdvancedEnvQueryGenerator_TriangleTessellation.generated.h"
 
 /**
  * 커버리지 원으로 패킹된 정삼각형 테셀레이션 생성기
  * https://www.researchgate.net/figure/Equilateral-triangle-tessellation-packing-into-a-coverage-circle-R-976-m_fig4_220471434
  */
 UCLASS(meta = (DisplayName = "Points: Triangle Tessellation"))
-class EQSNAVSAMPLE_API UEnvQueryGenerator_TriangleTessellation final : public UEnvQueryGenerator_ProjectedPoints
+class ADVANCEDENVIRONMENTQUERY_API UAdvancedEnvQueryGenerator_TriangleTessellation final : public UEnvQueryGenerator_ProjectedPoints
 {
 	GENERATED_BODY()
 
 public:
-	UEnvQueryGenerator_TriangleTessellation(const FObjectInitializer& ObjectInitializer);
+	UAdvancedEnvQueryGenerator_TriangleTessellation(const FObjectInitializer& ObjectInitializer);
 
 private:
 	virtual void GenerateItems(FEnvQueryInstance& QueryInstance) const final;

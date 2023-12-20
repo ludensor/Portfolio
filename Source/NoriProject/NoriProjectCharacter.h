@@ -5,18 +5,18 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "EQSNavAgentInterface.h"
-#include "EQSNavSampleCharacter.generated.h"
+#include "NoriProjectCharacter.generated.h"
 
 class UCameraComponent;
 class USpringArmComponent;
 
 UCLASS()
-class AEQSNavSampleCharacter : public ACharacter, public IEQSNavAgentInterface
+class ANoriProjectCharacter : public ACharacter, public IEQSNavAgentInterface
 {
 	GENERATED_BODY()
 
 public:
-	AEQSNavSampleCharacter();
+	ANoriProjectCharacter();
 
 	virtual void GetNavAgentProperties(float& OutAgentRadius, float& OutAgentHalfHeight) const final;
 

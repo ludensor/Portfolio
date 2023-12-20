@@ -3,12 +3,12 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class EQSNavSampleEditorTarget : TargetRules
+public class NoriProjectEditorTarget : TargetRules
 {
-    public EQSNavSampleEditorTarget(TargetInfo Target) : base(Target)
+    public NoriProjectEditorTarget(TargetInfo Target) : base(Target)
     {
         Type = TargetType.Editor;
         DefaultBuildSettings = BuildSettingsVersion.V2;
-        ExtraModuleNames.Add("EQSNavSample");
+        ExtraModuleNames.Add("NoriProject");
     }
 }
