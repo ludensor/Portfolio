@@ -154,4 +154,3 @@ int32 USLGameStatics::ConvertYawRotationToIndex(FRotator Rotation, FRotator Base
 - 광역 스킬 기능 개발에 사용될 수 있습니다.
 
 ### 바이오하자드4 인벤토리
-<img src="https://github.com/ludensor/Portfolio/assets/76856672/350eee14-6b90-4fa9-b3ac-d5d15f44ac6b.gif" width = 400>
