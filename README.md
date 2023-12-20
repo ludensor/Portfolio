@@ -12,6 +12,7 @@
   - [개요](#프로젝트-개요)
   - [콘텐츠](#콘텐츠)
   - [시연 영상](https://www.youtube.com/watch?v=An0XZp3zEA8)
+- [그 외](#그-외)
 
 </b>
 
@@ -138,3 +139,5 @@ int32 USLGameStatics::ConvertYawRotationToIndex(FRotator Rotation, FRotator Base
 ```
 
 - 몬스터와 플레이어의 위치에 대한 방향벡터와 플레이어의 전방 벡터의 사이 각도를 인덱스화하여 피격 애니메이션을 재생하도록 구현하였습니다.
+
+## 그 외
