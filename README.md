@@ -147,4 +147,6 @@ int32 USLGameStatics::ConvertYawRotationToIndex(FRotator Rotation, FRotator Base
 <img src="https://github.com/ludensor/Portfolio/assets/76856672/350eee14-6b90-4fa9-b3ac-d5d15f44ac6b.gif" width = 400>
 <img src="https://github.com/ludensor/Portfolio/assets/76856672/86166e0a-9135-4e69-a15b-18316ab00443.gif" width = 400>
 
+- 각 점들의 거리가 균일한 Vector List를 얻습니다.
+- 거리가 균일한 Vector List를 얻은 뒤 각 원소를 무작위로 섞어 정해진 개수만큼 Clamp 하여 사용합니다.
 - 광역 스킬 기능 개발에 사용될 수 있습니다.
