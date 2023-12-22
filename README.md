@@ -14,7 +14,6 @@
   - [시연 영상](https://www.youtube.com/watch?v=An0XZp3zEA8)
 - [그 외](#그-외)
   - [고급 환경 쿼리(플러그인)](#고급-환경-쿼리)
-  - [바이오하자드 RE:4 인벤토리(플러그인)](#바이오하자드-RE4-인벤토리)
   
 </b>
 
@@ -152,5 +151,3 @@ int32 USLGameStatics::ConvertYawRotationToIndex(FRotator Rotation, FRotator Base
 - 각 점들의 거리가 균일한 Vector List를 얻습니다.
 - 거리가 균일한 Vector List를 얻은 뒤 각 원소를 무작위로 섞어 정해진 개수만큼 Clamp 하여 사용합니다.
 - 광역 스킬 기능 개발에 사용될 수 있습니다.
-
-### 바이오하자드 RE:4 인벤토리
